@@ -1,0 +1,10 @@
+LOCAL VS HOSTING
+
+Aspek | Local | Hosting
+URL | http://kursusku-prototype.test/ | URL domain/server hosting
+Database | MySQL lokal Laragon (jika digunakan) | Database hosting (jika digunakan)
+Environment | Laragon pada komputer lokal | Web server hosting
+SSL | Dapat diuji tanpa HTTPS pada lingkungan lokal | HTTPS digunakan untuk koneksi yang aman
+Debug | Debug dapat diaktifkan saat pengembangan | Debug sebaiknya dimatikan pada production
+Secret | Konfigurasi sensitif disimpan di lingkungan lokal dan tidak di-commit | Secret disimpan pada konfigurasi/environment hosting dan tidak di-commit
+Document root | D:\laragon\www\kursusku-prototype | Folder document root pada hosting

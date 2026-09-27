@@ -1,0 +1,186 @@
+/* === DASAR SELURUH HALAMAN === */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #16332c;
+  background: #f5f7f9;
+  line-height: 1.6;
+}
+
+a {
+  color: #0b5f55;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* === KOTAK TENGAH === */
+.container {
+  width: min(1080px, 92%);
+  margin: 0 auto;
+}
+
+/* === BAGIAN ATAS / HEADER === */
+header {
+  background: #0f766e;
+  padding: 16px 24px;
+}
+
+header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+header nav a {
+  color: #ffffff;
+  text-decoration: none;
+  margin-right: 16px;
+  font-size: 14px;
+}
+
+header nav a:first-child {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+/* === ISI UTAMA === */
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+h2 {
+  color: #0b5f55;
+  margin-bottom: 1rem;
+}
+
+article {
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+  border-left: 3px solid #0f766e;
+}
+
+/* === BAGIAN SAMBUTAN / HERO === */
+#hero {
+  background: #eaf7f3;
+  padding: 32px;
+  border-radius: 16px;
+  text-align: center;
+}
+
+#hero h1 {
+  margin-top: 0;
+  color: #0b5f55;
+  font-size: 1.5rem;
+}
+
+/* === TOMBOL === */
+.button,
+a.button {
+  display: inline-block;
+  background: #0f766e;
+  color: #ffffff !important;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  margin: 8px 4px;
+}
+
+.button:hover,
+a.button:hover {
+  background: #0b5f55;
+  text-decoration: none;
+}
+
+/* === TABEL KATALOG === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  margin-top: 1rem;
+}
+
+th, td {
+  border-bottom: 1px solid #dddddd;
+  padding: 10px;
+  text-align: left;
+  font-size: 14px;
+}
+
+th {
+  background: #f9f9f9;
+  font-weight: 700;
+}
+
+/* === LAMBANG STATUS KURUS === */
+.badge-available,
+.badge-full {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.badge-available {
+  background: #e7f8ef;
+  color: #146c43;
+}
+
+.badge-full {
+  background: #fdeaea;
+  color: #a61b1b;
+}
+
+/* === GAMBAR & VIDEO === */
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+/* === BAGIAN BAWAH / FOOTER === */
+footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  border-top: 1px solid #dddddd;
+  color: #666666;
+  font-size: 13px;
+}
+
+/* === TAMPILAN HP — RESPONSIF === */
+@media (max-width: 640px) {
+  header {
+    padding: 12px 16px;
+  }
+
+  header nav {
+    gap: 0.5rem;
+  }
+
+  main {
+    padding: 16px;
+  }
+
+  #hero {
+    padding: 20px;
+  }
+
+  table,
+  th,
+  td {
+    font-size: 13px;
+    padding: 8px 6px;
+  }
+}
