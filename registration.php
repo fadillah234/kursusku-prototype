@@ -1,3 +1,9 @@
+<?php
+require __DIR__ . '/data.php';
+require __DIR__ . '/helpers.php';
+
+?>
+
 <!doctype html>
 <html lang="id">
 <head>
@@ -62,40 +68,67 @@
         <div class="form-group">
           <label for="course">Kursus yang Dipilih</label>
           <select id="course" name="course" required>
-            <option value="">-- Pilih kursus --</option>
-            <option value="web-dasar">Web Dasar</option>
-            <option value="php-dasar">PHP Dasar</option>
-            <option value="laravel-fundamental">Laravel Fundamental</option>
+  <option value="">-- Pilih kursus --</option>
+ 
+  <?php foreach ($courses as $course): ?>
+    <option value="<?= e($course['code']) ?>">
+      <?= e($course['name']) ?> - <?= formatRupiah($course['fee']) ?>
+    </option>
+  <?php endforeach; ?>
+
           </select>
         </div>
 
         <!-- Jenis Peserta - Radio -->
         <fieldset class="form-group">
-          <legend>Jenis Peserta</legend>
-          <label class="choice">
-            <input type="radio" name="participant_type" value="mahasiswa" required>
-            Mahasiswa
-          </label>
-          <label class="choice">
-            <input type="radio" name="participant_type" value="umum">
-            Umum
-          </label>
-        </fieldset>
+  <legend>Jenis Peserta</legend>
 
+  <label class="choice">
+    <input type="radio" name="participant_type" value="mahasiswa" required>
+    Mahasiswa
+  </label>
+
+  <label class="choice">
+    <input type="radio" name="participant_type" value="guru">
+    Guru
+  </label>
+
+  <label class="choice">
+    <input type="radio" name="participant_type" value="umum">
+    Umum
+  </label>
+</fieldset>
         <!-- Minat Tambahan - Checkbox -->
-        <fieldset class="form-group">
-          <legend>Minat Tambahan</legend>
-          <label class="choice">
-            <input type="checkbox" name="interests[]" value="ui-ux"> UI/UX
-          </label>
-          <label class="choice">
-            <input type="checkbox" name="interests[]" value="database"> Database
-          </label>
-          <label class="choice">
-            <input type="checkbox" name="interests[]" value="backend"> Backend
-          </label>
-        </fieldset>
+       <fieldset class="form-group">
+  <legend>Minat Tambahan</legend>
 
+  <?php foreach ($interestOptions as $value => $label): ?>
+    <label class="choice">
+      <input type="checkbox" name="interests[]" value="<?= e($value) ?>">
+      <?= e($label) ?>
+    </label>
+  <?php endforeach; ?>
+
+        </fieldset>
+<!-- Metode Belajar -->
+<fieldset class="form-group">
+  <legend>Metode Belajar</legend>
+
+  <label class="choice">
+    <input type="radio" name="learning_method" value="online" required>
+    Online
+  </label>
+
+  <label class="choice">
+    <input type="radio" name="learning_method" value="offline">
+    Tatap Muka
+  </label>
+
+  <label class="choice">
+    <input type="radio" name="learning_method" value="hybrid">
+    Hybrid
+  </label>
+</fieldset>
         <!-- Catatan - Textarea -->
         <div class="form-group">
           <label for="note">Catatan</label>
@@ -103,10 +136,29 @@
                     placeholder="Tuliskan kebutuhan belajar Anda (opsional)"></textarea>
           <small class="help">Maksimal 300 karakter.</small>
         </div>
+<div class="form-group">
+    <label for="package_count">Jumlah Paket</label>
 
+    <select id="package_count" name="package_count" required>
+        <?php for ($i = 1; $i <= 3; $i++): ?>
+            <option value="<?= $i ?>">
+                <?= $i ?> Paket
+            </option>
+        <?php endfor; ?>
+    </select>
+</div>
         <button class="btn-primary" type="submit">Kirim Pendaftaran</button>
       </form>
     </section>
+    <section class="form-group">
+    <h2>Fasilitas</h2>
+
+    <ul>
+        <?php foreach ($facilities as $facility): ?>
+            <li><?= e($facility) ?></li>
+        <?php endforeach; ?>
+    </ul>
+</section>
   </main>
 </body>
 </html>

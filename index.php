@@ -35,6 +35,7 @@ $courses = [
         <a href="#keunggulan">Keunggulan</a>
         <a href="#katalog">Katalog</a>
         <a href="registration.php">Daftar</a>
+        <a href="history.php">History Dummy</a>
         <a href="#kontak">Kontak</a>
     </nav>
 </header>
