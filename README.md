@@ -39,3 +39,15 @@ kursusku-prototype/
 - Milestone 2: Landing Page KursusKu Versi 1 (HTML semantik + PHP dasar).
 - Milestone 3: Kalkulator estimasi biaya, tervalidasi 5 test case.
 - Milestone 4: Katalog data-driven (array 6 kursus + foreach + 4 function reusable + 6 test).
+
+## Test Case Minggu 3
+
+| No | Fee | Peserta | Diskon | Admin | Expected Total |
+|---|---:|---:|---:|---:|---:|
+| 1 | Rp 350.000 | 1 | 0% | Rp 25.000 | Rp 375.000 |
+| 2 | Rp 350.000 | 1 | 10% | Rp 25.000 | Rp 340.000 |
+| 3 | Rp 350.000 | 2 | 25% | Rp 25.000 | Rp 550.000 |
+| 4 | Rp 0 | 1 | 10% | Rp 25.000 | Rp 0 |
+| 5 | Rp 2.500.000 | 3 | 10% | Rp 50.000 | Rp 6.800.000 |
+
+Semua test case dibandingkan dengan hasil yang ditampilkan oleh `fee-calculator.php`.
